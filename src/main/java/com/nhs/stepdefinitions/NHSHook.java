@@ -14,7 +14,6 @@ public class NHSHook {
     @Before
     public void setup(){
         driver = DriverHelper.getDriver();
-
     }
 
     @After

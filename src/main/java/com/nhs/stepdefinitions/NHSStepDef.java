@@ -1,5 +1,6 @@
 package com.nhs.stepdefinitions;
 
+import com.Utils.BrowserUtils;
 import com.Utils.ConfigReader;
 import com.Utils.DriverHelper;
 import com.nhs.pages.NHSLoginPage;
@@ -33,9 +34,11 @@ public class NHSStepDef {
         Assert.assertEquals(url, driver.getCurrentUrl());
     }
 
-    @Then("User validates there are three cards visible")
-    public void user_validates_there_are_three_cards_visible() {
-        Assert.assertEquals();
+    @Then("User validates there are three cards visible {string}, {string}, and {string}")
+    public void user_validates_there_are_three_cards_visible(String patientsWithRooms, String patientsWaiting, String freeRooms) {
+        Assert.assertEquals(patientsWithRooms, mainPage.getFirstCardNumber());
+        Assert.assertEquals(patientsWaiting, mainPage.getSecondCardNumber());
+        Assert.assertEquals(freeRooms, mainPage.getThirdCardNumber());
     }
 
 }
