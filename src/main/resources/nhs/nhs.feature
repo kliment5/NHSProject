@@ -22,4 +22,4 @@ Feature: Testing login functionality of NHS application
       Given User navigates to the NHS website
       When User enters username 'admin' and password 'admin'
       Then User validates title 'NHS patients' and url 'http://www.techtorialacademy.link/app'
-      And User validates there are three cards visible
+      And User validates there are three cards visible '3', '4', and '0'

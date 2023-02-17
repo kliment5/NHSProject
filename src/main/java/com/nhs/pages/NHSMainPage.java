@@ -26,17 +26,17 @@ public class NHSMainPage {
     WebElement freeRooms;
 
 
-    public void validateTitle(WebDriver driver, String expectedTitle, String expectedUrl){
-        Assert.assertEquals(BrowserUtils.getText(title), expectedTitle);
-        Assert.assertEquals(driver.getCurrentUrl(), expectedUrl);
+
+    public String getFirstCardNumber(){
+        return BrowserUtils.getText(patientsWithRooms);
     }
 
-    public void validateThreeCards(String patientswithrooms, String patientswaiting, String freerooms){
-        Assert.assertEquals(BrowserUtils.getText(patientsWithRooms), patientswithrooms);
-        Assert.assertEquals(BrowserUtils.getText(patientsWaiting), patientswaiting);
-        Assert.assertEquals(BrowserUtils.getText(freeRooms), freerooms);
+    public String getSecondCardNumber(){
+        return BrowserUtils.getText(patientsWaiting);
     }
 
-
+    public String getThirdCardNumber(){
+        return BrowserUtils.getText(freeRooms);
+    }
 
 }
